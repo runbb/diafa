@@ -4,10 +4,11 @@ import { AppRoutingModule } from "~/app.routing";
 import { AppComponent } from "~/app.component";
 
 import { dhafhService } from "~/Services/dhafh.service";
-import { roomsComponent } from "~/Rooms/rooms.component";
+import { RoomsComponent } from "~/Rooms/rooms.component";
 
 // components
-import { roomCardComponent } from "~/room-card/room-card.component";
+import { RoomCardComponent } from "~/room-card/room-card.component";
+import { RegisterComponent } from "~/register/register.component";
 // import { ItemDetailComponent } from "./item/item-detail.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -26,8 +27,9 @@ import { roomCardComponent } from "~/room-card/room-card.component";
     ],
     declarations: [
         AppComponent,
-        roomsComponent,
-        roomCardComponent
+        RoomsComponent,
+        RoomCardComponent,
+        RegisterComponent
         // ItemDetailComponent
     ],
     providers: [

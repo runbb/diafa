@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './room-card.component.html',
   styleUrls: ['./room-card.component.scss']
 })
-export class roomCardComponent implements OnInit {
+export class RoomCardComponent implements OnInit {
 
   constructor() { }
 

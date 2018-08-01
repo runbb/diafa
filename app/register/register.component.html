@@ -1,4 +1,10 @@
-<StackLayout>
-  <Label class="h1 title"
-    text="register Is working"></Label>
-</StackLayout>
+<ActionBar class="action-bar">
+  <Label class="title text-center" text="التسجيل"></Label>
+</ActionBar>
+<GridLayout>
+  <StackLayout verticalAlignment="center">
+    <TextField hint="رقم الجوال" text="" keyboardType="phone" returnKeyType="next"></TextField>
+    <TextField hint="كود التحقق" text="" keyboardType="number" returnKeyType="send"></TextField>
+    <Button text="تحقق"></Button>
+  </StackLayout>
+</GridLayout>
