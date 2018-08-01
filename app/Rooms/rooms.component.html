@@ -1,0 +1,12 @@
+<ActionBar class="action-bar fSTC">
+    <GridLayout>
+        <Label text="ضيافة" class="text-center title-text stcf"></Label>
+    </GridLayout>
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <room-card></room-card>
+        </ng-template>
+    </ListView>
+</StackLayout>
