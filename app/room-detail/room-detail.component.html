@@ -2,29 +2,39 @@
   <Label class="title text-center" text="معلومات الغرفة"></Label>
 </ActionBar>
 <GridLayout rows="*,50">
-    <GridLayout row="0">
-      <ScrollView>
-        <StackLayout>
-          <Image [src]="getRandomImage()" height="230" stretch="fill"></Image>
-          <Label text="غرفتين وصال ودورة مياه تبعد 3 كم عن الحرم المكي" textWrap="true" class="text-description"></Label>    
-          <GridLayout class="full">
-              <Label text="750 SAR" class="text-center"></Label>
+  <GridLayout row="0">
+    <ScrollView>
+      <StackLayout>
+        <GridLayout>
+          <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="200" width="100%">
+            <CarouselItem height="100%" width="100%">
+              <Image [src]="getRandomImage()" height="230" stretch="fill"></Image>
+            </CarouselItem>
+          </Carousel>
+          <GridLayout class="full" verticalAlignment="bottom" columns="*,*,*">
+            <Label text="&#xf142; 750 SAR" class="ion text-center text-price" col="0"></Label>
+            <Label text="750 SAR" class="text-center text-makkah" col="1"></Label>
+            <Label text="&#xf334; 3km" class="ion text-center text-location" col="2"></Label>
           </GridLayout>
-      
-          <!-- <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="100%" indicatorAnimation="SWAP"
-            indicatorColor="#66ccff" indicatorColorUnselected="#cceeff" height="250" width="80%">
-            <CarouselItem backgroundColor="red" height="100%">
-              <Label class="h2 text-center" color="white" textWrap="true" text="1"></Label>
-            </CarouselItem>
-            <CarouselItem backgroundColor="purple">
-              <Label class="h2 text-center" color="white" textWrap="true" text="2"></Label>
-            </CarouselItem>
-          </Carousel> -->
-        </StackLayout>
-      </ScrollView>
-    </GridLayout>
-    <GridLayout columns="*,*" row="1" padding="0">
-        <Button text="مشاركة الإعلان"  class="btn btn-primary share-button" col="0"></Button>
-        <Button text="الاتصال بالمعلن" class="btn btn-primary connect-button" col="1"></Button>
-    </GridLayout>
+        </GridLayout>
+        <Label text="غرفتين وصال ودورة مياه تبعد 3 كم عن الحرم المكي" textWrap="true" class="short-discription"></Label>
+        <GridLayout rows="30,*">
+          <Label row="0" text="الوصف" class="discription-title" textWrap="true"></Label>
+          <Label row="1" text="بلاب بلاب بلاب بلاب" class="discription-text" textWrap="true"></Label>
+        </GridLayout>
+
+        <GridLayout class="map-box">
+          <ContentView height="100%" width="100%">
+            <Mapbox accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" [latitude]="room.latitude"
+              [longitude]="room.longitude" zoomLevel="3" mapStyle="light" hideAttribution="false" hideCompass="false" (mapReady)="onMapReady($event)">
+            </Mapbox>
+          </ContentView>
+        </GridLayout>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+  <GridLayout columns="*,*" row="1" padding="0">
+    <Button text="مشاركة الإعلان" class="share-button" col="0"></Button>
+    <Button text="الاتصال بالمعلن" class="connect-button" col="1"></Button>
+  </GridLayout>
 </GridLayout>

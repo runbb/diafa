@@ -21,6 +21,6 @@ export class RoomCardComponent implements OnInit {
       'https://static.ounousa.com/Content/ResizedImages/638/654/inside/161010103236076.jpg'
     ]
 
-    return image[Math.floor(Math.random() * (image.length -1))];
+    return image[/*Math.floor(Math.random() * (image.length - 1))*/ 1];
   }
 }

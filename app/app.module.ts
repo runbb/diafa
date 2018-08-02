@@ -1,15 +1,20 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { registerElement } from "nativescript-angular/element-registry";
 import { AppRoutingModule } from "~/app.routing";
 import { AppComponent } from "~/app.component";
 
+// Services
 import { dhafhService } from "~/Services/dhafh.service";
-import { RoomsComponent } from "~/Rooms/rooms.component";
 
 // components
+import { RoomsComponent } from "~/Rooms/rooms.component";
 import { RoomCardComponent } from "~/room-card/room-card.component";
 import { RegisterComponent } from "~/register/register.component";
 import { RoomDetailComponent } from "~/room-detail/room-detail.component";
+
+// Elements
+registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 
 // import { ItemDetailComponent } from "./item/item-detail.component";
 

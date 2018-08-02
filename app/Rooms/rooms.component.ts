@@ -4,7 +4,6 @@ import { registerElement } from "nativescript-angular/element-registry";
 import { iRoom } from "~/Services/room";
 import { dhafhService } from "~/Services/dhafh.service";
 import { SegmentedBarItem } from "ui/segmented-bar";
-registerElement("fab", () => require("nativescript-floatingactionbutton").Fab);
 
 @Component({
     selector: "d-rooms",
@@ -22,13 +21,13 @@ export class RoomsComponent implements OnInit {
     ngOnInit(): void {
         this.items = this.dService.getRooms();
 
-        let segmentedLowPrice = new SegmentedBarItem();
-        segmentedLowPrice.title = "الأقل سعرًا";
+        let segmentedFree = new SegmentedBarItem();
+        segmentedFree.title = "مجانا";
         let segmentedTopVote = new SegmentedBarItem();
         segmentedTopVote.title = "الأعلى تقيمًا";
         let segmentedLocation = new SegmentedBarItem();
         segmentedLocation.title = "الأقرب";
-        this.filters.push(segmentedLowPrice);
+        this.filters.push(segmentedFree);
         this.filters.push(segmentedTopVote);
         this.filters.push(segmentedLocation);
     }
