@@ -2,9 +2,11 @@
   <Label class="title text-center" text="التسجيل"></Label>
 </ActionBar>
 <GridLayout>
-  <StackLayout verticalAlignment="center">
-    <TextField hint="رقم الجوال" text="" keyboardType="phone" returnKeyType="next"></TextField>
-    <TextField hint="كود التحقق" text="" keyboardType="number" returnKeyType="send"></TextField>
-    <Button text="تحقق"></Button>
+  <StackLayout verticalAlignment="top">
+    <Image src="~/Images/logo-transparent.png" class="logo"></Image>
+    
+    <TextField class="input" hint="رقم الجوال" text="" keyboardType="phone" returnKeyType="next"></TextField>
+    <!-- <TextField class="input" hint="كود التحقق" text="" keyboardType="number" returnKeyType="send"></TextField> -->
+    <Button text="إرسال الكود" class="btn btn-primary"></Button>
   </StackLayout>
 </GridLayout>

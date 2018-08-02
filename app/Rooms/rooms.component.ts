@@ -25,7 +25,7 @@ export class RoomsComponent implements OnInit {
         let segmentedLowPrice = new SegmentedBarItem();
         segmentedLowPrice.title = "الأقل سعرًا";
         let segmentedTopVote = new SegmentedBarItem();
-        segmentedTopVote.title = "الأعلى تقيميًا";
+        segmentedTopVote.title = "الأعلى تقيمًا";
         let segmentedLocation = new SegmentedBarItem();
         segmentedLocation.title = "الأقرب";
         this.filters.push(segmentedLowPrice);

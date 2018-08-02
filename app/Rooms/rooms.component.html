@@ -1,16 +1,16 @@
 <ActionBar class="action-bar fSTC">
     <GridLayout>
-        <Image src="~/Images/h4.png" height="30"></Image>
+        <Image src="~/Images/header.png" height="30"></Image>
     </GridLayout>
 </ActionBar>
 <GridLayout class="page" rows="auto,*">
     <SegmentedBar class="filters" [items]="filters" row="0" selectedIndex="2"></SegmentedBar>
 
-    <ListView row="1" [items]="items" class="list-group">
+    <ListView row="1" [items]="items" class="list-group" [nsRouterLink]="['/room-detail']">
         <ng-template let-item="item">
             <room-card></room-card>
         </ng-template>
     </ListView>
 
-    <Button row="1" class="fab-button-simple" (tap)="addItem()" [nsRouterLink]="['/register']"></Button>
+    <Button row="1" class="fab-button" [nsRouterLink]="['/register']"></Button>
 </GridLayout>

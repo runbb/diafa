@@ -9,6 +9,8 @@ import { RoomsComponent } from "~/Rooms/rooms.component";
 // components
 import { RoomCardComponent } from "~/room-card/room-card.component";
 import { RegisterComponent } from "~/register/register.component";
+import { RoomDetailComponent } from "~/room-detail/room-detail.component";
+
 // import { ItemDetailComponent } from "./item/item-detail.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -29,7 +31,8 @@ import { RegisterComponent } from "~/register/register.component";
         AppComponent,
         RoomsComponent,
         RoomCardComponent,
-        RegisterComponent
+        RegisterComponent,
+        RoomDetailComponent
         // ItemDetailComponent
     ],
     providers: [

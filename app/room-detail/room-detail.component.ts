@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Carousel, CarouselItem } from 'nativescript-carousel';
+import { registerElement } from "nativescript-angular/element-registry";
+// registerElement('Carousel', Carousel, Carousel);
+// registerElement('CarouselItem', () => CarouselItem, CarouselItem);
 
 @Component({
   moduleId: module.id,
-  selector: 'room-card',
-  templateUrl: './room-card.component.html',
-  styleUrls: ['./room-card.component.scss']
+  selector: 'app-room-detail',
+  templateUrl: './room-detail.component.html',
+  styleUrls: ['./room-detail.component.scss']
 })
-export class RoomCardComponent implements OnInit {
+export class RoomDetailComponent implements OnInit {
 
   constructor() { }
 
