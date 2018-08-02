@@ -1,22 +1,30 @@
 <ActionBar class="action-bar">
   <Label class="title text-center" text="معلومات الغرفة"></Label>
 </ActionBar>
-<ScrollView>
-  <StackLayout>
-    <Image [src]="getRandomImage()" height="230" stretch="fill"></Image>
-    <Label text="غرفتين وصال ودورة مياه تبعد 3 كم عن الحرم المكي" textWrap="true" class="text-description"></Label>    
-    <GridLayout class="full">
-        <Label text="750 SAR" class="text-center"></Label>
+<GridLayout rows="*,50">
+    <GridLayout row="0">
+      <ScrollView>
+        <StackLayout>
+          <Image [src]="getRandomImage()" height="230" stretch="fill"></Image>
+          <Label text="غرفتين وصال ودورة مياه تبعد 3 كم عن الحرم المكي" textWrap="true" class="text-description"></Label>    
+          <GridLayout class="full">
+              <Label text="750 SAR" class="text-center"></Label>
+          </GridLayout>
+      
+          <!-- <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="100%" indicatorAnimation="SWAP"
+            indicatorColor="#66ccff" indicatorColorUnselected="#cceeff" height="250" width="80%">
+            <CarouselItem backgroundColor="red" height="100%">
+              <Label class="h2 text-center" color="white" textWrap="true" text="1"></Label>
+            </CarouselItem>
+            <CarouselItem backgroundColor="purple">
+              <Label class="h2 text-center" color="white" textWrap="true" text="2"></Label>
+            </CarouselItem>
+          </Carousel> -->
+        </StackLayout>
+      </ScrollView>
     </GridLayout>
-
-    <!-- <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="100%" indicatorAnimation="SWAP"
-      indicatorColor="#66ccff" indicatorColorUnselected="#cceeff" height="250" width="80%">
-      <CarouselItem backgroundColor="red" height="100%">
-        <Label class="h2 text-center" color="white" textWrap="true" text="1"></Label>
-      </CarouselItem>
-      <CarouselItem backgroundColor="purple">
-        <Label class="h2 text-center" color="white" textWrap="true" text="2"></Label>
-      </CarouselItem>
-    </Carousel> -->
-  </StackLayout>
-</ScrollView>
+    <GridLayout columns="*,*" row="1" padding="0">
+        <Button text="مشاركة الإعلان"  class="btn btn-primary share-button" col="0"></Button>
+        <Button text="الاتصال بالمعلن" class="btn btn-primary connect-button" col="1"></Button>
+    </GridLayout>
+</GridLayout>
