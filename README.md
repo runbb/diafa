@@ -4,7 +4,7 @@
  تطبيق لتوفير سكن للحجاج والمعتمرين من مواطنين واهل مكة بسعر رمزي وجودة عالية.
 
 ### صور من داخل التطبيق
-<img alt="screenshot 1" src="https://raw.githubusercontent.com/runbb/diafa/master/screenshots/screenshot 1.png" width="170" style="max-width:100%;"> <img alt="screenshot 2" src="https://raw.githubusercontent.com/runbb/diafa/master/screenshots/screenshot_2.png" width="170" style="max-width:100%;">
+<img alt="screenshot 1" src="https://raw.githubusercontent.com/runbb/diafa/master/screenshots/screenshot 1.jpeg" width="170" style="max-width:100%;"> <img alt="screenshot 2" src="https://raw.githubusercontent.com/runbb/diafa/master/screenshots/screenshot_2.jpeg" width="170" style="max-width:100%;">
 ----
 ## وحي الفكرة؟
  احد مشاكل الحجاج هي توفير السكن بالسعر والمكان المناسب لذلك حاولنا توفير فكرة تخدم اهل العقار غير التجاري في مكة والحجاج بتوفير سكن بسعر رخيص وجودة وتوفريه عالية.
