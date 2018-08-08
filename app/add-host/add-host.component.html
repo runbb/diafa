@@ -1,0 +1,14 @@
+<ActionBar class="action-bar">
+  <Label class="title text-center" text="التسجيل"></Label>
+</ActionBar>
+<GridLayout>
+  <StackLayout verticalAlignment="top">
+    <Button class="ion btn btn-primary bigButton" text="&#xf30f; إضافة صورة"></Button>
+    <Button class="ion btn btn-primary bigButton" text="&#xf31c; تحديد الموقع"></Button>
+    <TextField class="input" hint="عنوان الغرفة" returnKeyType="next" [(ngModel)]="phoneNumber"></TextField>
+    <TextView class="input" hint="وصف الغرفة" returnKeyType="next" [(ngModel)]="phoneNumber"></TextView>
+    <TextField class="input" hint="سعر السكن بالساعة" keyboardType="number" returnKeyType="next" [(ngModel)]="phoneNumber"></TextField>
+    <TextField class="input" hint="رقم الجوال" keyboardType="phone" text="" keyboardType="phone" returnKeyType="next" [(ngModel)]="phoneNumber"></TextField>
+    <Button class="ion btn btn-primary" text="&#xf273; إضافة"></Button>
+  </StackLayout>
+</GridLayout>

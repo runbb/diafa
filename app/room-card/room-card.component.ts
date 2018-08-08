@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,20 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-card.component.scss']
 })
 export class RoomCardComponent implements OnInit {
-
+  @Input('room') room = {};
   constructor() { }
 
-  ngOnInit() { }
-
-  getRandomImage(): string{
-    let image: string[] = [
-      'http://www.mbc.net/default/mediaObject/photos-2017/September-/26-9-2017/ozil%201%20(2)/original/7c3e02797bdebfb620a2ac36871a82bd3cb69380/ozil%201%20(2).jpg',
-      'http://images.locationdesign.net//Blog/Posts/2017/1/31/37253_19ffe646-103d-4ef7-ba5b-8a51e7ebf0b9.jpg',
-      'http://nisfeldunia.ahram.org.eg/Media/Multimedia/2017/11/27/2017-636473746887893380-789.png',
-      'http://www.sayidaty.net/sites/default/files/20/04/2016/1461152194_shutterstock_196122077_copy.jpg',
-      'https://static.ounousa.com/Content/ResizedImages/638/654/inside/161010103236076.jpg'
-    ]
-
-    return image[/*Math.floor(Math.random() * (image.length - 1))*/ 1];
+  ngOnInit() {
+    // this.room['photo']['url'] = 'http://206.189.137.251:1337' + this.room['photo']['url'];
   }
 }

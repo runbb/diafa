@@ -19,7 +19,9 @@ export class RoomsComponent implements OnInit {
     constructor(private dService: dhafhService) { }
 
     ngOnInit(): void {
-        this.items = this.dService.getRooms();
+        this.dService.api.getEntries('rooms').then( (rooms) => {
+            this.items = <iRoom[]>rooms;
+        })
 
         let segmentedFree = new SegmentedBarItem();
         segmentedFree.title = "مجانا";

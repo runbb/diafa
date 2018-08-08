@@ -12,6 +12,7 @@ import { RoomsComponent } from "~/Rooms/rooms.component";
 import { RoomCardComponent } from "~/room-card/room-card.component";
 import { RegisterComponent } from "~/register/register.component";
 import { RoomDetailComponent } from "~/room-detail/room-detail.component";
+import { AddHostComponent } from "~/add-host/add-host.component";
 
 // Elements
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
@@ -19,7 +20,7 @@ registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 // import { ItemDetailComponent } from "./item/item-detail.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
@@ -30,14 +31,16 @@ registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
     ],
     imports: [
         NativeScriptModule,
+        NativeScriptFormsModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         RoomsComponent,
         RoomCardComponent,
+        RoomDetailComponent,
         RegisterComponent,
-        RoomDetailComponent
+        AddHostComponent
         // ItemDetailComponent
     ],
     providers: [

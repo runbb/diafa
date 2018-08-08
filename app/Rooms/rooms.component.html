@@ -6,9 +6,11 @@
 <GridLayout class="page" rows="auto,*">
     <SegmentedBar class="filters" [items]="filters" row="0" selectedIndex="2"></SegmentedBar>
 
-    <ListView row="1" [items]="items" class="list-group" [nsRouterLink]="['/room-detail']">
+    <ListView row="1" [items]="items" class="list-group">
         <ng-template let-item="item">
-            <room-card></room-card>
+            <GridLayout [nsRouterLink]="['/room-detail', item.id]">
+                <room-card [room]="item"></room-card>
+            </GridLayout>
         </ng-template>
     </ListView>
 

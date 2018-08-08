@@ -1,39 +1,27 @@
 import { Injectable } from "@angular/core";
-
 import { iRoom } from "~/Services/room";
+import Strapi from 'strapi-sdk-javascript';
 
 @Injectable()
-export class dhafhService {
-    private rooms = new Array<iRoom>(
-        { id: 1, name: "Ter Stegen", role: "Goalkeeper" },
-        { id: 3, name: "Piqué", role: "Defender" },
-        { id: 4, name: "I. Rakitic", role: "Midfielder" },
-        { id: 5, name: "Sergio", role: "Midfielder" },
-        { id: 6, name: "Denis Suárez", role: "Midfielder" },
-        { id: 7, name: "Arda", role: "Midfielder" },
-        { id: 8, name: "A. Iniesta", role: "Midfielder" },
-        { id: 9, name: "Suárez", role: "Forward" },
-        { id: 10, name: "Messi", role: "Forward" },
-        { id: 11, name: "Neymar", role: "Forward" },
-        { id: 12, name: "Rafinha", role: "Midfielder" },
-        { id: 13, name: "Cillessen", role: "Goalkeeper" },
-        { id: 14, name: "Mascherano", role: "Defender" },
-        { id: 17, name: "Paco Alcácer", role: "Forward" },
-        { id: 18, name: "Jordi Alba", role: "Defender" },
-        { id: 19, name: "Digne", role: "Defender" },
-        { id: 20, name: "Sergi Roberto", role: "Midfielder" },
-        { id: 21, name: "André Gomes", role: "Midfielder" },
-        { id: 22, name: "Aleix Vidal", role: "Midfielder" },
-        { id: 23, name: "Umtiti", role: "Defender" },
-        { id: 24, name: "Mathieu", role: "Defender" },
-        { id: 25, name: "Masip", role: "Goalkeeper" },
-    );
+export class dhafhService{
+    private rooms: any = [];
+    public api: Strapi
 
-    getRooms(): iRoom[] {
-        return this.rooms;
+    constructor(){
+        this.api = new Strapi('http://206.189.137.251:1337');
+        this.api.login('xlmnxp','1x1X1x1qwe123');
     }
 
-    getItem(id: number): iRoom {
-        return this.rooms.filter(item => item.id === id)[0];
+    getRooms(): Promise<Array<iRoom>> {
+        return fetch("http://206.189.137.251:1337/rooms").then(result => {
+            this.rooms = result.json();
+            return this.rooms;
+        });
+    }
+
+    getRoom(id: string): Promise<Array<iRoom>> {
+        return this.rooms.then(result => {
+            return [].filter.bind(result)(room => room.id == id)[0];
+        })
     }
 }

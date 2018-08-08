@@ -1,0 +1,27 @@
+.input{
+    border-width: 1;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 4;
+    text-align: center;
+    margin: 10;
+    background: #fcfcfc;
+}
+
+button{
+    background-color: #ffffff;
+    color: #4d806f;
+}
+
+.bigButton{
+    font-size: 21;
+    height: 80;
+}
+
+GridLayout{
+    background-color: #4d806f;
+}
+
+.action-bar{
+    z-index: 0;
+}

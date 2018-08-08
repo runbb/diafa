@@ -1,5 +1,14 @@
 export interface iRoom {
-    id: number;
+    available: boolean;
+    _id: string;
     name: string;
-    role: string;
+    description: string;
+    latitude: string;
+    longitude: string;
+    phone: string;
+    price: number;
+    createdAt: Date;
+    updatedAt: Date;
+    __v: number;
+    id: string;
 }

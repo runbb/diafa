@@ -5,8 +5,10 @@
   <StackLayout verticalAlignment="top">
     <Image src="~/Images/logo-transparent.png" class="logo"></Image>
     
-    <TextField class="input" hint="رقم الجوال" text="" keyboardType="phone" returnKeyType="next"></TextField>
-    <!-- <TextField class="input" hint="كود التحقق" text="" keyboardType="number" returnKeyType="send"></TextField> -->
-    <Button text="إرسال الكود" class="btn btn-primary"></Button>
+    <TextField class="input" hint="رقم الجوال" text="" keyboardType="phone" returnKeyType="next" [(ngModel)]="phoneNumber" [visibility]="sendBtnEnabled ? 'visible' : 'collapsed'"></TextField>
+    <TextField class="input" hint="كود التحقق" text="" keyboardType="number" returnKeyType="send" [(ngModel)]="enteredCode" [visibility]="!sendBtnEnabled ? 'visible' : 'collapsed'"></TextField>
+    <Button text="إرسال الكود" class="btn btn-primary" (tap)="getVerified()" [visibility]="sendBtnEnabled ? 'visible' : 'collapsed'"></Button>
+    <Button text="تأكيد" class="btn btn-primary" (tap)="verified()" [visibility]="!sendBtnEnabled ? 'visible' : 'collapsed'"></Button>
+    <Button text="إعادة إرسال الكود" class="btn btn-primary" (tap)="reGetVerified()" [visibility]="!sendBtnEnabled ? 'visible' : 'collapsed'"></Button>
   </StackLayout>
 </GridLayout>
