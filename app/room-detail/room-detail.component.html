@@ -7,14 +7,14 @@
       <StackLayout>
         <GridLayout>
           <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="200" width="100%">
-            <CarouselItem height="100%" width="100%">
+            <CarouselItem height="100%" width="100%" backgroundColor="#4d806f">
               <!-- <Image [src]="room['photo']['url']" height="230" stretch="fill"></Image> -->
             </CarouselItem>
           </Carousel>
-          <GridLayout class="full" verticalAlignment="bottom" columns="*,*,*">
-            <Label [text]="'&#xf142; ' + ((room.price <= 0) ? 'مجاني' : room.price + ' ريال')" class="ion text-center text-price" col="0"></Label>
-            <Label text="750 SAR" class="ion text-center text-makkah" col="1"></Label>
-            <Label text="&#xf334; 3km" class="ion text-center text-location" col="2"></Label>
+          <GridLayout class="info-bar" verticalAlignment="bottom" columns="auto,*,auto" rows="25">
+            <Label [text]="'&#xf142; ' + ((room.price <= 0) ? 'مجاني' : room.price + ' ريال')" class="ion text-center text-price" col="0" verticalAlignment="center"></Label>
+            <Label [text]="'تبعد عن مكة ' + distanceToMakkah + ' كم'" class="ion text-center text-makkah" col="1" verticalAlignment="center"></Label>
+            <Label text="&#xf334; 3km" class="ion text-center text-location" col="2" verticalAlignment="center"></Label>
           </GridLayout>
         </GridLayout>
         <Label [text]="room.name" textWrap="true" class="short-description"></Label>
@@ -24,13 +24,15 @@
         </GridLayout>
         <GridLayout class="map-box">
           <ContentView height="200" width="95%">
-            <Mapbox delay="1000" accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" [latitude]="room.latitude"
-              [longitude]="room.longitude" zoomLevel="13" mapStyle="light" hideCompass="false" (mapReady)="onMapReady($event)"
+            <Mapbox #mapbox accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" 
+              [latitude]="room.latitude"
+              [longitude]="room.longitude" zoomLevel="13" mapStyle="satellite_streets"
+              [hideCompass]="disableMap"
               [disableZoom]="disableMap"
               [disableRotation]="disableMap"
               [disableScroll]="disableMap"
               [disableTilt]="disableMap"
-              [hideAttribution]="disableMap" >
+              [hideAttribution]="disableMap">
             </Mapbox>
           </ContentView>
         </GridLayout>
@@ -39,6 +41,6 @@
   </GridLayout>
   <GridLayout columns="*,*" row="1" padding="0">
     <Button text="مشاركة الإعلان" class="share-button" col="0" (tap)="share()"></Button>
-    <Button text="الاتصال بالمعلن" class="connect-button" col="1"></Button>
+    <Button text="الإتصال بالمعلن" class="connect-button" col="1" (tap)="connect()"></Button>
   </GridLayout>
 </GridLayout>

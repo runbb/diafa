@@ -1,9 +1,15 @@
-.full{
+.info-bar{
     background-color: rgba(255,255,255,0.6);
     padding: 10;
     font-weight: bold;
     color: #707070;
     z-index: 10;
+}
+
+.info-bar label{
+    padding: 0;
+    height: auto;
+    font-size: auto;
 }
 
 .short-description{
@@ -58,11 +64,4 @@
 .text-location{
     text-align: left;
     padding-left: 5;
-}
-
-.compassBack {
-    margin-top: 200;
-    margin-right: -280;
-    width: 70;
-    height: 70;
 }

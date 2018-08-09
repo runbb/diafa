@@ -3,8 +3,8 @@ export interface iRoom {
     _id: string;
     name: string;
     description: string;
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
     phone: string;
     price: number;
     createdAt: Date;

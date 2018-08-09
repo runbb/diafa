@@ -12,16 +12,20 @@ export class dhafhService{
         this.api.login('xlmnxp','1x1X1x1qwe123');
     }
 
-    getRooms(): Promise<Array<iRoom>> {
-        return fetch("http://206.189.137.251:1337/rooms").then(result => {
-            this.rooms = result.json();
-            return this.rooms;
-        });
-    }
-
-    getRoom(id: string): Promise<Array<iRoom>> {
-        return this.rooms.then(result => {
-            return [].filter.bind(result)(room => room.id == id)[0];
-        })
+    distanceToMakkah(lat1, lon1, lat2=21.422510, lon2=39.826168, unit = 'K') {
+        var radlat1 = Math.PI * lat1/180
+        var radlat2 = Math.PI * lat2/180
+        var theta = lon1-lon2
+        var radtheta = Math.PI * theta/180
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (dist > 1) {
+            dist = 1;
+        }
+        dist = Math.acos(dist)
+        dist = dist * 180/Math.PI
+        dist = dist * 60 * 1.1515
+        if (unit=="K") { dist = dist * 1.609344 }
+        if (unit=="N") { dist = dist * 0.8684 }
+        return dist
     }
 }
