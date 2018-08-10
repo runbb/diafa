@@ -7,9 +7,11 @@
       <StackLayout>
         <GridLayout>
           <Carousel #carousel ios:indicatorOffset="0,-10" ios:finite="true" ios:bounce="false" showIndicator="true" height="200" width="100%">
-            <CarouselItem height="100%" width="100%" backgroundColor="#4d806f">
-              <!-- <Image [src]="room['photo']['url']" height="230" stretch="fill"></Image> -->
-            </CarouselItem>
+            <!-- <template *ngFor="let photo of room.photos"> -->
+              <CarouselItem height="100%" width="100%" backgroundColor="#ececec">
+                <Image [src]="(room.photos?.length) ? room.photos[0] : '~/Images/non-preview.png'" height="230" stretch="aspectFit"></Image>
+              </CarouselItem>
+            <!-- </template> -->
           </Carousel>
           <GridLayout class="info-bar" verticalAlignment="bottom" columns="auto,*,auto" rows="25">
             <Label [text]="'&#xf142; ' + ((room.price <= 0) ? 'مجاني' : room.price + ' ريال')" class="ion text-center text-price" col="0" verticalAlignment="center"></Label>

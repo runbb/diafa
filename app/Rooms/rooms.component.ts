@@ -4,6 +4,8 @@ import { registerElement } from "nativescript-angular/element-registry";
 import { iRoom } from "~/Services/room";
 import { dhafhService } from "~/Services/dhafh.service";
 import { SegmentedBarItem } from "ui/segmented-bar";
+import { Frame } from "tns-core-modules/ui/frame/frame";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     selector: "d-rooms",
@@ -12,15 +14,14 @@ import { SegmentedBarItem } from "ui/segmented-bar";
     styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent implements OnInit {
-    items: iRoom[];
+    rooms: iRoom[];
     filters: Array<SegmentedBarItem> = [];
-    // This pattern makes use of Angular’s dependency injection implementation to inject an instance of the ItemService service into this class. 
-    // Angular knows about this service because it is included in your app’s main NgModule, defined in app.module.ts.
-    constructor(private dService: dhafhService) { }
+
+    constructor(private dService: dhafhService, private routerExtensions: RouterExtensions) { }
 
     ngOnInit(): void {
         this.dService.api.getEntries('rooms').then( (rooms) => {
-            this.items = <iRoom[]>rooms;
+            this.rooms = <iRoom[]>rooms;
         })
 
         let segmentedFree = new SegmentedBarItem();
@@ -32,5 +33,13 @@ export class RoomsComponent implements OnInit {
         this.filters.push(segmentedFree);
         this.filters.push(segmentedTopVote);
         this.filters.push(segmentedLocation);
+    }
+
+    navigateToRoom(args){
+        this.routerExtensions.navigate(['/room-detail',this.rooms[args.index].id]);
+    }
+
+    navigateToRegister(){
+        this.routerExtensions.navigate(['/register']);
     }
 }

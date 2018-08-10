@@ -9,7 +9,6 @@ export class dhafhService{
 
     constructor(){
         this.api = new Strapi('http://206.189.137.251:1337');
-        this.api.login('xlmnxp','1x1X1x1qwe123');
     }
 
     distanceToMakkah(lat1, lon1, lat2=21.422510, lon2=39.826168, unit = 'K') {

@@ -1,5 +1,5 @@
 <GridLayout rows="*,*,*" columns="100, *" height="100">
-    <!-- <Image [src]="room.photo.url" class="thumbnail" row="0" rowSpan="3" col="0" stretch="fill"></Image> -->
+    <Image [src]="(room.photos?.length) ? room.photos[0] : '~/Images/non-preview.png'" class="thumbnail" row="0" rowSpan="3" col="0" stretch="fill"></Image>
     <Label [text]="(room.price <= 0) ? 'مجاني' : room.price + ' ريال'" row="0" col="1" class="price" verticalAlignment="top"></Label>
     <Label [text]="room.name" row="1" col="1" class="title" verticalAlignment="center"></Label>
     <Label text="&#xf334; 3km" class="ion location" row="2" col="1" verticalAlignment="bottom"></Label>

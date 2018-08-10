@@ -6,7 +6,6 @@ var dhafhService = /** @class */ (function () {
     function dhafhService() {
         this.rooms = [];
         this.api = new strapi_sdk_javascript_1.default('http://206.189.137.251:1337');
-        this.api.login('xlmnxp', '1x1X1x1qwe123');
     }
     dhafhService.prototype.distanceToMakkah = function (lat1, lon1, lat2, lon2, unit) {
         if (lat2 === void 0) { lat2 = 21.422510; }
