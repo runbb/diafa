@@ -8,7 +8,7 @@ export class dhafhService{
     public api: Strapi
 
     constructor(){
-        this.api = new Strapi('http://206.189.137.251:1337');
+        this.api = new Strapi('http://diafa.sy.sa');
     }
 
     distanceToMakkah(lat1, lon1, lat2=21.422510, lon2=39.826168, unit = 'K') {
