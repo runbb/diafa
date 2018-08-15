@@ -31,6 +31,7 @@ import {
 import { action, alert } from "ui/dialogs";
 import { setText } from 'nativescript-clipboard';
 import { dial } from 'nativescript-phone';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 registerElement("Carousel", () => require("nativescript-carousel").Carousel);
 registerElement("CarouselItem", () => require("nativescript-carousel").CarouselItem);
@@ -47,7 +48,7 @@ export class RoomDetailComponent implements OnInit {
   distanceToMakkah: number = 0;
   @ViewChild('mapbox') mapbox: ElementRef;
 
-  constructor(private dService: dhafhService, private route: ActivatedRoute, private ngZone: NgZone) {}
+  constructor(private dService: dhafhService, private route: ActivatedRoute, private ngZone: NgZone, private routerExtensions: RouterExtensions) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -102,5 +103,10 @@ export class RoomDetailComponent implements OnInit {
         })
       }
     })
+  }
+
+
+  openMap(args){
+    this.routerExtensions.navigate(['/mapbox',this.room.id]);
   }
 }

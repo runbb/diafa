@@ -25,24 +25,31 @@
           <Label row="1" [text]="room.description" class="description-text" textWrap="true"></Label>
         </GridLayout>
         <GridLayout class="map-box">
-          <ContentView height="200" width="95%">
-            <Mapbox #mapbox accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" 
-              [latitude]="room.latitude"
-              [longitude]="room.longitude" zoomLevel="13" mapStyle="satellite_streets"
-              [hideCompass]="disableMap"
-              [disableZoom]="disableMap"
-              [disableRotation]="disableMap"
-              [disableScroll]="disableMap"
-              [disableTilt]="disableMap"
-              [hideAttribution]="disableMap">
-            </Mapbox>
-          </ContentView>
+        <Ripple rippleColor="#ffffff" (tap)="openMap()">
+          <GridLayout margin="5">
+            <ContentView height="200" width="100%">
+              <Mapbox #mapbox accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" 
+                [latitude]="room.latitude"
+                [longitude]="room.longitude" zoomLevel="13" mapStyle="satellite_streets"
+                [hideCompass]="disableMap"
+                [disableZoom]="disableMap"
+                [disableRotation]="disableMap"
+                [disableScroll]="disableMap"
+                [disableTilt]="disableMap"
+                [hideAttribution]="disableMap">
+              </Mapbox>
+            </ContentView>
+          </GridLayout>
+        </Ripple>
         </GridLayout>
       </StackLayout>
     </ScrollView>
   </GridLayout>
   <GridLayout columns="*,*" row="1" padding="0">
-    <Button text="مشاركة الإعلان" class="share-button" col="0" (tap)="share()"></Button>
-    <Button text="الإتصال بالمعلن" class="connect-button" col="1" (tap)="connect()"></Button>
-  </GridLayout>
+      <Ripple rippleColor="#4d806f" (tap)="share()" col="0">
+        <Button text="مشاركة الإعلان" class="share-button"></Button>
+      </Ripple>
+      <Ripple rippleColor="#c4a972" (tap)="connect()" col="1">
+        <Button text="الإتصال بالمعلن" class="connect-button"></Button>
+      </Ripple>
 </GridLayout>

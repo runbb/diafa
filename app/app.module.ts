@@ -16,11 +16,13 @@ import { AddHostComponent } from "~/add-host/add-host.component";
 
 // Elements
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
+registerElement("Ripple", () => require("nativescript-ripple").Ripple);
 
 // import { ItemDetailComponent } from "./item/item-detail.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { MapboxComponent } from "~/mapbox/mapbox.component";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
@@ -40,6 +42,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
         RoomCardComponent,
         RoomDetailComponent,
         RegisterComponent,
+        MapboxComponent,
         AddHostComponent
         // ItemDetailComponent
     ],

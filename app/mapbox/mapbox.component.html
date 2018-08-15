@@ -1,0 +1,19 @@
+<GridLayout rows="*,50">
+    <GridLayout row="0">
+      <ContentView height="100%" width="100%">
+        <Mapbox #mapbox accessToken="pk.eyJ1IjoieGxtbnhwIiwiYSI6ImNqa2QxbHRnYzA4bzkza3JycXVsZmdpM2YifQ.JOOr58fEmva3b1lezxB-DQ" 
+          [latitude]="room.latitude"
+          [longitude]="room.longitude" zoomLevel="13" mapStyle="satellite_streets"
+          [hideCompass]="disableMap"
+          [disableZoom]="disableMap"
+          [disableRotation]="disableMap"
+          [disableScroll]="disableMap"
+          [disableTilt]="disableMap"
+          [hideAttribution]="disableMap">
+        </Mapbox>
+      </ContentView>
+    </GridLayout>
+    <GridLayout row="1" backgroundColor="#ececec">
+
+    </GridLayout>
+</GridLayout>

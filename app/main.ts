@@ -9,10 +9,5 @@ import {
 import {
     AppModule
 } from "~/app.module";
-import {
-    registerElement
-} from "nativescript-angular/element-registry";
-
-registerElement("Ripple", () => require("nativescript-ripple").Ripple);
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);
